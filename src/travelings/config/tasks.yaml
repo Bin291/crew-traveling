@@ -1,0 +1,55 @@
+preference_task:
+  description: >
+    Người dùng chọn sở thích số {theme}. Gợi ý 5 điểm đến phù hợp trong số: {destinations}.
+    Giải thích lý do.
+  expected_output: >
+    Danh sách 5 điểm đến và lý do.
+  agent: preference_analyzer
+
+intro_task:
+  description: >
+    Giới thiệu tổng quan về {destination}.
+  expected_output: Intro
+  agent: destination_presenter
+
+culture_task:
+  description: >
+    Thông tin văn hóa, ẩm thực, tham quan tại {destination}.
+  expected_output: Chi tiết văn hóa
+  agent: cultural_advisor
+
+weather_task:
+  description: >
+    Dự báo thời tiết {days} ngày tới tại {destination}:\n{weather_text}\nTóm tắt và lời khuyên.
+  expected_output: Dự báo thời tiết
+  agent: weather_forecaster
+
+itinerary_task:
+  description: >
+    Lịch trình {days} ngày tại {destination}.
+  expected_output: Lịch trình
+  agent: itinerary_planner
+
+cost_task:
+  description: >
+    Chi phí cho {people} người trong {days} ngày tại {destination} với ngân sách {budget} triệu VND.
+  expected_output: Chi phí
+  agent: cost_estimator
+
+transport_task:
+  description: >
+    Phương tiện phù hợp đến {destination}.
+  expected_output: Vận chuyển
+  agent: transport_advisor
+
+accommodation_task:
+  description: >
+    Gợi ý lưu trú phù hợp tại {destination}.
+  expected_output: Chỗ ở
+  agent: accommodation_advisor
+
+feasibility_task:
+  description: >
+    Phân tích khả thi chuyến đi với các thông tin đã cung cấp.
+  expected_output: Phân tích
+  agent: feasibility_analyst

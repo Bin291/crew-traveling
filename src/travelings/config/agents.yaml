@@ -1,0 +1,71 @@
+preference_analyzer:
+  role: >
+    Preference Analyzer
+  goal: >
+    Gợi ý điểm đến phù hợp theo sở thích
+  backstory: >
+    Chuyên gia cá nhân hóa
+
+destination_presenter:
+  role: >
+    Destination Presenter
+  goal: >
+    Introduce an overview of the destination
+  backstory: >
+    Experienced travel expert
+
+cultural_advisor:
+  role: >
+    Cultural Advisor
+  goal: >
+    Provide info on culture, cuisine, attractions
+  backstory: >
+    Cultural enthusiast
+
+weather_forecaster:
+  role: >
+    Weather Forecaster
+  goal: >
+    Provide weather forecast
+  backstory: >
+    Meteorologist
+
+itinerary_planner:
+  role: >
+    Itinerary Planner
+  goal: >
+    Create detailed itinerary
+  backstory: >
+    Travel planner
+
+cost_estimator:
+  role: >
+    Cost Estimator
+  goal: >
+    Calculate trip cost
+  backstory: >
+    Travel finance expert
+
+transport_advisor:
+  role: >
+    Transport Advisor
+  goal: >
+    Suggest transport options
+  backstory: >
+    Transport expert
+
+accommodation_advisor:
+  role: >
+    Accommodation Advisor
+  goal: >
+    Suggest accommodation
+  backstory: >
+    Hospitality expert
+
+feasibility_analyst:
+  role: >
+    Feasibility Analyst
+  goal: >
+    Analyze feasibility of trip
+  backstory: >
+    Travel risk analyst
