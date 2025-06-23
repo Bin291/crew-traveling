@@ -64,16 +64,46 @@ def haversine(coord1, coord2):
     c = 2 * asin(sqrt(a))
     r = 6371
     return round(c * r, 1)
+def print_plan(plan, destination, language="vi"):
+    section_titles_vi = [
+        "📍 Giới thiệu địa điểm",
+        "🎎 Văn hoá & Ẩm thực",
+        "🌤️ Dự báo thời tiết",
+        "📅 Lịch trình chi tiết",
+        "💰 Ước tính chi phí",
+        "🛣️ Phương tiện di chuyển",
+        "🏨 Chỗ ở đề xuất",
+        "📊 Đánh giá khả thi"
+    ]
 
-def print_plan(plan, destination):
-    output = "\n=== KẾ HOẠCH DU LỊCH ===\n"
+    section_titles_en = [
+        "📍 Destination Overview",
+        "🎎 Culture & Cuisine",
+        "🌤️ Weather Forecast",
+        "📅 Detailed Itinerary",
+        "💰 Estimated Budget",
+        "🛣️ Transportation Options",
+        "🏨 Suggested Accommodations",
+        "📊 Feasibility Analysis"
+    ]
+
+    section_titles = section_titles_vi if language == "vi" else section_titles_en
+    output = "\n=== KẾ HOẠCH DU LỊCH ===\n" if language == "vi" else "\n=== TRAVEL PLAN ===\n"
+
     for i, raw_output in enumerate(plan.tasks_output):
-        output += f"\n➡️ Nhiệm vụ {i+1}:\n{raw_output}\n"
+        title = section_titles[i] if i < len(section_titles) else f"Phần {i+1}" if language == "vi" else f"Section {i+1}"
+        output += f"\n{title}\n{str(raw_output).strip()}\n"
+
     if destination in city_coords:
         dist = haversine(city_coords["Ho Chi Minh"], city_coords[destination])
         est_price = min(max(int(dist * 800), 500_000), 2_000_000)
-        output += f"\n✈️ Khoảng cách từ Hồ Chí Minh đến {destination}: {dist} km\n💸 Ước tính vé máy bay: {est_price:,} VND"
+        if language == "vi":
+            output += f"\n✈️ Khoảng cách từ Hồ Chí Minh đến {destination}: {dist} km\n💸 Ước tính vé máy bay: {est_price:,} VND"
+        else:
+            output += f"\n✈️ Distance from Ho Chi Minh City to {destination}: {dist} km\n💸 Estimated flight cost: {est_price:,} VND"
+
     return output
+
 
 def save_plan_to_file(text, filename):
     with open(filename, "w", encoding="utf-8") as f:

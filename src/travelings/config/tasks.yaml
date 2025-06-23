@@ -5,51 +5,70 @@ preference_task:
   expected_output: >
     Danh sách 5 điểm đến và lý do.
   agent: preference_analyzer
+  context: []
 
 intro_task:
   description: >
-    Giới thiệu tổng quan về {destination}.
-  expected_output: Intro
+    Giới thiệu chuyến đi
+  expected_output: >
+    Một đoạn giới thiệu hấp dẫn
   agent: destination_presenter
+  context: []
 
 culture_task:
   description: >
     Thông tin văn hóa, ẩm thực, tham quan tại {destination}.
-  expected_output: Chi tiết văn hóa
+  expected_output: >
+            Chi tiết văn hóa
   agent: cultural_advisor
+  context: []
 
 weather_task:
   description: >
     Dự báo thời tiết {days} ngày tới tại {destination}:\n{weather_text}\nTóm tắt và lời khuyên.
   expected_output: Dự báo thời tiết
   agent: weather_forecaster
+  context: []
 
 itinerary_task:
   description: >
     Lịch trình {days} ngày tại {destination}.
-  expected_output: Lịch trình
+  expected_output: >
+        Lịch trình
   agent: itinerary_planner
+  context: []
 
 cost_task:
   description: >
-    Chi phí cho {people} người trong {days} ngày tại {destination} với ngân sách {budget} triệu VND.
-  expected_output: Chi phí
+    Hãy tính chi tiết chi phí cho {people} người đi {destination} trong {days} ngày, với ngân sách khoảng {budget} triệu VND.
+    Bao gồm: phương tiện, lưu trú, ăn uống, tham quan, mua sắm. Nếu vượt ngân sách, hãy đưa giải pháp thay thế hợp lý.
+  expected_output: >
+    - Tổng chi phí dự kiến (VND)
+    - Bảng chi tiết từng mục
+    - Gợi ý tiết kiệm nếu có
   agent: cost_estimator
+  context: []
 
 transport_task:
   description: >
     Phương tiện phù hợp đến {destination}.
-  expected_output: Vận chuyển
+  expected_output: >
+    Vận chuyển
   agent: transport_advisor
+  context: []
 
 accommodation_task:
   description: >
     Gợi ý lưu trú phù hợp tại {destination}.
-  expected_output: Chỗ ở
+  expected_output: >
+    Chỗ ở
   agent: accommodation_advisor
+  context: []
 
 feasibility_task:
   description: >
     Phân tích khả thi chuyến đi với các thông tin đã cung cấp.
-  expected_output: Phân tích
+  expected_output: >
+    Phân tích
   agent: feasibility_analyst
+  context: []
